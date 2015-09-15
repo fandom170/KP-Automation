@@ -97,7 +97,7 @@ public class Logintest_v2 {
 
         //Click on save button
      WebElement SaveCR = driver.findElement(By.name("button_save"));
-        SaveCR.submit();
+        SaveCR.click();
         //waiting for page load
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 

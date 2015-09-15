@@ -8,12 +8,13 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
+
 /**
  * Created by Admin on 15.09.2015.
  */
-public class Login_Invalid {
+public class Login_Positive {
     @Test
-    public static void Login_Test () {
+    public static void Login_Test() {
         final WebDriver driver = new FirefoxDriver();
 
         driver.get("http://193.138.245.222:81/auth/login");
@@ -24,22 +25,22 @@ public class Login_Invalid {
 
         //Enter data to Password field
         WebElement Password = driver.findElement(By.id("password"));
-        Password.sendKeys("234");
+        Password.sendKeys("123");
 
         // Submit the form.
         WebElement LogIn = driver.findElement(By.id("logIn"));
         LogIn.click();
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 
-        //Verifying of message
-        assert (driver.findElement(By.xpath(".//*[@id='username-element']/ul/li")).getText().contains("Invalid username or password"));
+        //Verifying that page loaded
+        assert (driver.findElement(By.xpath(".//*[@id='datagrid__723a925886']/div[1]")).getText().contains("Players"));
 
         driver.quit();
-
 
 
     }
 
 
+}
 
- }
+
