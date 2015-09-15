@@ -25,7 +25,7 @@ public class Test_003_New_User_Data {
         //Declaration of WebDriver
         WebDriver driver = new FirefoxDriver();
 
-//Declaration of variables
+        //Declaration of variables
 
 
         String Username00 = "Username_";
@@ -127,7 +127,7 @@ public class Test_003_New_User_Data {
         FNfield.sendKeys(UsernameTs);
         //click on search button
         WebElement Search = driver.findElement(By.name("search"));
-        Search.submit();
+        Search.click();
         //waiting for page load
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 
@@ -136,7 +136,7 @@ public class Test_003_New_User_Data {
         // content of TC 005
         // Opening of first Link
         WebElement FirstRes = driver.findElement(By.xpath("//div[contains(@id , 'datagrid_table')]//tr[2]/td[1]//img"));
-        FirstRes.submit();
+        FirstRes.click();
 
 /*____________________________________________________________*/
 
@@ -170,6 +170,7 @@ public class Test_003_New_User_Data {
 
         //Click Exit on the page
         WebElement Quit = driver.findElement(By.linkText("/ auth/logout"));
+        Quit.click();
         //Exit from the Browser
         driver.quit();
 

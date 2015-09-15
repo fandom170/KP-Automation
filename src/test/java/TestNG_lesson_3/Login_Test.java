@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 /** * Created by Admin on 14.09.2015. */
 public class Login_Test {
 
-    @Before
+    /*@Before
     @org.testng.annotations.BeforeMethod
     public void setUp() throws Exception {
 
@@ -29,22 +29,23 @@ public class Login_Test {
 
     }*/
 
-    @Test
+    /*@Test
     @org.testng.annotations.Test
     public void testInit() throws Exception {
 
-    }
+    }*/
 
-    @Test
+    /*@Test
     @org.testng.annotations.Test
     public void testTest1() throws Exception {
 
-    }
+    }*/
 
 
 
-       //Declaration of WebDriver
+      //Declaration of WebDriver
        WebDriver driver = new FirefoxDriver();
+
        //Declaration of variables
        String Username00 = "Username_";
 
@@ -79,21 +80,21 @@ public class Login_Test {
 
 
 
-    @AfterSuite
+    /*@AfterSuite
     public void tearDown()throws Exception{
            //Click Exit on the page
            WebElement Exit;
           Exit = driver.findElement(By.linkText("/ auth/logout"));
            //Exit from the Browser
            driver.quit();;
-    }
+    }*/
 
 
 
     @Test//(enabled = true)
     public void Test001 (){
         //Declaration of WebDriver
-        WebDriver driver = new FirefoxDriver();
+       // WebDriver driver = new FirefoxDriver();
 
         // Opening of Login Page
         driver.get("http://193.138.245.222:81/auth/login");
@@ -202,5 +203,12 @@ public class Login_Test {
         assert (driver.findElement(By.xpath("//td[@id='c5618e27f0ab6d90d503b6ef5faca34c']//tr[2]/td/table/tbody/tr[5]/td[2]")).getText().contains(UsernameTs));
 
     }
+    @Test
+    public void tearDown()throws Exception{
+        //Click Exit on the page
+        WebElement Exit;
+        Exit = driver.findElement(By.linkText("/ auth/logout"));
+        //Exit from the Browser
+        driver.quit();}
 
 }
