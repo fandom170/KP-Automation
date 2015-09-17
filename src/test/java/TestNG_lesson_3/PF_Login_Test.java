@@ -10,9 +10,9 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Admin on 15.09.2015.
  */
-public class PF_Login_Page () {
+/*public class LoginPage {
 
-    public void Login_Test {
+    public LoginPage (WebDriver driver){
 
         WebElement Username = driver.findElement(By.id("username"));
         WebElement Password = driver.findElement(By.id("password"));
@@ -20,4 +20,4 @@ public class PF_Login_Page () {
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 
     }
-}
+}*/
