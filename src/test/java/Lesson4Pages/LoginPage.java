@@ -18,7 +18,7 @@ public class LoginPage {
     WebElement userPasswordInput;
 
     @FindBy (id = "logIn")
-    WebElement buserConfirm;
+    WebElement userConfirmButton;
 
     public LoginPage (WebDriver driver) {
     this.driver = driver;
@@ -35,7 +35,7 @@ public class LoginPage {
     }
 
     public void clickLogin() {
-    buserConfirm.click();
+    userConfirmButton.click();
     }
 
     public void logInAuto(String usName, String usPass ) {
