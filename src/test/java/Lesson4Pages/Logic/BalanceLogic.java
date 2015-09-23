@@ -11,7 +11,7 @@ public class BalanceLogic {
 
     PlayerDataPage objPlayerDataPage;
 
-    public BalancePage(WebDriver driver) {
+    public BalanceLogic(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

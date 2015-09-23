@@ -1,36 +1,30 @@
 package Lesson4Pages.tests;
 
-import Lesson4Pages.pagesTest.LoginPage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import Lesson4Pages.pagesTest.UsersPage;
+import org.junit.Assert;
 import org.testng.annotations.Test;
 
-public class Login_Positive_Test {
 
-    WebDriver driver;
-    LoginPage objLoginPage;
+public class Login_Positive_Test extends BaseTest {
 
-    @BeforeTest
-    public void setUp() {
-        driver = new FirefoxDriver();
-        driver.get("http://193.138.245.222:81/auth/login");
-    }
-
-    @AfterTest
-    public void tearDown() {
-        driver.quit();
-    }
+    //WebDriver driver;
+    public UsersPage userdataPage;
 
     @Test
-    public void loginAdmin123Positive() {
+    public void loginAdmin123Positive() throws Exception {
         //Create Login Page object
-        objLoginPage = new LoginPage(driver);
+        //loginPage = new LoginPage(driver);
         //Login to Admin Area
-        objLoginPage.logInAuto("admin", "123");
-
+        //loginPage.logInAuto("admin", "123");
+        //assert
+        try {
+           Assert.assertEquals("Wrong Login", "Administration Area", userdataPage.adminAreaLabelExpected);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+
 }
 
 

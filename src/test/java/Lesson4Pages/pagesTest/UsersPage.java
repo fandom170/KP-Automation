@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import java.util.concurrent.TimeUnit;
-
 
 public class UsersPage {
 
@@ -26,6 +24,11 @@ public class UsersPage {
     //First Link
     @FindBy(xpath = "//div[contains(@id , 'datagrid_table')]//tr[2]/td[1]//img")
     WebElement firstLineEditButton;
+
+    //Players label
+    @FindBy (xpath = "//div[@id='header-center']")
+    WebElement adminAreaLabel;
+    public String adminAreaLabelExpected = String.valueOf(adminAreaLabel);
 
 
     public UsersPage(WebDriver driver) {
@@ -49,18 +52,17 @@ public class UsersPage {
         searchButton.click();
     }
 
-    public void clickInsertButton () {
+    public  void clickInsertButton() {
         //Click Insert button
         this.clickInsert();
     }
 
-    public void enterUserForEdit() {
+    public void enterUserForEdit(String usName) {
         //Insert Existing User Name
 
-        this.setExistUserName(PlayerDataPage.userNameTs);
+        this.setExistUserName(usName);
         //Click Search
         this.clickSearchButton();
-        driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
         //Click First Link
         this.clickFirstLinkEdit();
 

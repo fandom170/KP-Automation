@@ -2,51 +2,49 @@ package Lesson4Pages.tests;
 
 import Lesson4Pages.Logic.BalanceLogic;
 import Lesson4Pages.pagesTest.BalancePage;
-import Lesson4Pages.pagesTest.LoginPage;
-import Lesson4Pages.pagesTest.UsersPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class AddAllBalancesTest {
+public class AddAllBalancesTest extends BaseTest {
 
     WebDriver driver;
-    LoginPage objLoginPage;
-    UsersPage objUsersPage;
-    BalancePage objBalancePage;
-    BalanceLogic objBalancwLogic;
+    //LoginPage loginPage;
+   // UsersPage usersPage;
+    BalancePage balancePage;
+    BalanceLogic balanceLogic;
 
-    @BeforeTest
-    public void setUp() {
-        driver = new FirefoxDriver();
-        driver.get(objLoginPage.address);
-        objLoginPage = new LoginPage(driver);
-        objLoginPage.logInAuto("admin", "123");
-        objUsersPage.enterUserForEdit();
-    }
+    //@BeforeTest
+    //public void setUp() {
+    //    driver = new FirefoxDriver();
+    //    driver.get(loginPage.address);
+    //    loginPage = new LoginPage(driver);
+     //   loginPage.logInAuto("admin", "123");
 
-    @AfterTest
-    public void tearDown() {
-        driver.quit();
-    }
+    //}
+
+    //@AfterTest
+    //public void tearDown() {
+    //    driver.quit();
+    //}
 
     @Test
     public void enterAndVerifyBalance() {
 
+
+       // usersPage.enterUserForEdit(GlobalVariables.userNameExpected);
+
         String windowHandler = driver.getWindowHandle();
 
-        objBalancwLogic.newPopUpWindowReal();
-        objBalancePage.balanceRealEnter(objBalancePage.realBalanceValue, objBalancePage.realBalanceNote);
+        balanceLogic.newPopUpWindowReal();
+        balancePage.balanceRealEnter(balancePage.realBalanceValue, balancePage.realBalanceNote);
         driver.switchTo().window(windowHandler);
 
-        objBalancwLogic.newPopUpWindowFun();
-        objBalancePage.balanceFunEnter(objBalancePage.funBalanceValue, objBalancePage.funBalanceNote);
+        balanceLogic.newPopUpWindowFun();
+        balancePage.balanceFunEnter(balancePage.funBalanceValue, balancePage.funBalanceNote);
         driver.switchTo().window(windowHandler);
 
-        objBalancwLogic.newPopUpWindowBonus();
-        objBalancePage.balanceBonusEnter(objBalancePage.bonusBalanceValue, objBalancePage.bonusBalanceNote);
+        balanceLogic.newPopUpWindowBonus();
+        balancePage.balanceBonusEnter(balancePage.bonusBalanceValue, balancePage.bonusBalanceNote);
         driver.switchTo().window(windowHandler);
 
     }

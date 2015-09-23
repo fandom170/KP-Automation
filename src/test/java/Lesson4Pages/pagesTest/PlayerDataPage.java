@@ -5,39 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class PlayerDataPage {
     WebDriver driver;
-
-    //Declaration of variables
-    //Main user name
-    private static String userName00 = "Us";
-    private static Date now = new Date();
-    private static DateFormat formatter = new SimpleDateFormat("ddMMyyHHmm");
-    private static String s = formatter.format(now);
-    public static String userNameTs = userName00 + s;
-    //Email Address
-    private static String eMail00 = "@test.com.ua";
-    public static String eMail = userNameTs + eMail00;
-
-    //Other Variables
-    public String usPassword = "ABCDEFGH";
-    public String pLFirstname = "Alexander";
-    public String pLLastname = "Nikolayev";
-    public String pLCity = "Odessa";
-    //String Country
-    //String PL_Address = "187-Avenue";
-    private String pLPhone = "+000-00-00-00";
-    //String pL_Gender = "MALE";
-    //String pL_Bithday = "12-08-1970";
-    //checkboxes
-    //Selects:
-    //Country
-    //Admin
-    //gender
 
     // User Name
     @FindBy(xpath = "//input[contains(@id, 'us_login')]")
@@ -78,6 +47,7 @@ public class PlayerDataPage {
     @FindBy (xpath = ".//*[@id='c5618e27f0ab6d90d503b6ef5faca34c']/table/tbody/tr[2]/td/table/tbody/tr[4]/td[4]/a/img")
     WebElement addBonusDollarsButton;
 
+    //Value of Balance
 
 
     public PlayerDataPage(WebDriver driver) {
@@ -90,7 +60,7 @@ public class PlayerDataPage {
     }
 
     public void setNewUserEmail(String eMail) {
-        userEmailNewInput.sendKeys(PlayerDataPage.eMail);
+        userEmailNewInput.sendKeys(eMail);
     }
 
     public void setUserPassNewInput(String us_Password) {
@@ -113,16 +83,16 @@ public class PlayerDataPage {
         userCityNewInput.sendKeys(pL_City);
     }
 
-    public void setUserPhoneNewInput(String pL_Phone) {
-        userPhoneNewInput.sendKeys(pL_Phone);
+    public void setUserPhoneNewInput(String pLPhone) {
+        userPhoneNewInput.sendKeys(pLPhone);
     }
 
     public void clicknewUserSaveButton() {
         userSaveButton.click();
     }
 
-    public void enterUserDataSave( String usName, String UsPass, String email, String FN, String LN,
-                                   String City, String Phone) {
+    public void enterUserDataSave(String usName, String UsPass, String email, String FN, String LN,
+                                         String City, String Phone) {
         this.setNewUserName(usName);
         this.setNewUserEmail(email);
         this.setUserPassNewInput(UsPass);
@@ -146,16 +116,8 @@ public class PlayerDataPage {
         addBonusDollarsButton.click();
     }
 
-    //public void runAddingRealMoneyBalance() {
-     //   this.openBalancePageRealMoney();
-   // }
 
-    //public  void runAddingFunMoneyBalance () {
-    //    this.openBalancePageFunMoney();
-    //}
 
-    //public  void runAddingBonusMoneyBalance () {
-     //   this.openBalancePageBonusMoney();
-    //}
+
 }
 
