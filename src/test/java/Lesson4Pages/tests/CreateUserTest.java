@@ -4,15 +4,12 @@ import Lesson4Pages.pagesTest.PlayerDataPage;
 import Lesson4Pages.pagesTest.UsersPage;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CreateUserTest extends BaseTest {
-
-    WebDriver driver;
 
 
     @Test
@@ -25,14 +22,11 @@ public class CreateUserTest extends BaseTest {
         //Enter User Data
 
         //Declaration of variables
-        //Main user name
         Date now = new Date();
         DateFormat formatter = new SimpleDateFormat("ddMMyyHHmm");
         String s = formatter.format(now);
         String userNameExpected = "Us" + s;
-        //Email Address
         String eMailExpected = userNameExpected + "@test.com.ua";
-        //Other Variables
         String usPasswordExpected = "ABCDEFGH";
         String pLFirstnameExpected = "Alexander";
         String pLLastnameExpected = "Nikolayev";
