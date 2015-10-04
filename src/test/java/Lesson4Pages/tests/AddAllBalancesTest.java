@@ -1,37 +1,31 @@
 package Lesson4Pages.tests;
 
-import Lesson4Pages.Logic.BalanceLogic;
-import Lesson4Pages.pagesTest.BalancePage;
-import org.openqa.selenium.WebDriver;
+
 import org.testng.annotations.Test;
 
 public class AddAllBalancesTest extends BaseTest {
 
-    WebDriver driver;
-    //LoginPage loginPage;
-   // UsersPage usersPage;
-    BalancePage balancePage;
-    BalanceLogic balanceLogic;
 
-    //@BeforeTest
-    //public void setUp() {
-    //    driver = new FirefoxDriver();
-    //    driver.get(loginPage.address);
-    //    loginPage = new LoginPage(driver);
-     //   loginPage.logInAuto("admin", "123");
+   @Test
+   public void enterAndVerifyBalance (){
+       //open player
 
-    //}
+       //Arrange
+       //read balances values
 
-    //@AfterTest
-    //public void tearDown() {
-    //    driver.quit();
-    //}
+       //open window with balances
 
-    @Test
+       //Assert
+       //verify new added balances
+
+
+   }
+   /*
     public void enterAndVerifyBalance() {
+        BalancePage balancePage;
 
 
-       // usersPage.enterUserForEdit(GlobalVariables.userNameExpected);
+        // usersPage.enterUserForEdit(GlobalVariables.userNameExpected);
 
         String windowHandler = driver.getWindowHandle();
 
@@ -47,7 +41,7 @@ public class AddAllBalancesTest extends BaseTest {
         balancePage.balanceBonusEnter(balancePage.bonusBalanceValue, balancePage.bonusBalanceNote);
         driver.switchTo().window(windowHandler);
 
-    }
+    }*/
 
 
 }

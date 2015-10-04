@@ -13,22 +13,16 @@ public abstract class BaseTest {
     final WebDriver driver = new FirefoxDriver();
 
 
-
-
     @BeforeClass
-    protected void B_Login () throws InterruptedException
-    {
+    protected void B_Login() throws InterruptedException {
         driver.get("http://193.138.245.222:81/auth/login");
 
     }
 
     @AfterClass
-    protected void TearDown () {
+    protected void TearDown() {
         driver.quit();
     }
-
-
-
 
 
 }

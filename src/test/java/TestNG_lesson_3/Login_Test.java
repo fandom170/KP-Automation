@@ -1,20 +1,21 @@
 package TestNG_lesson_3;
 //import junit.framework.TestCase;
-import org.junit.After;
-import org.junit.Before;
+
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-//import org.testng.annotations.BeforeTest;
+
 import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit;
+
+//import org.testng.annotations.BeforeTest;
 //import static org.testng.Assert.*;
 
-/** * Created by Admin on 14.09.2015. */
+/**
+ * Created by Admin on 14.09.2015.
+ */
 public class Login_Test {
 
     /*@Before
@@ -42,41 +43,40 @@ public class Login_Test {
     }*/
 
 
+    //Declaration of WebDriver
+    WebDriver driver = new FirefoxDriver();
 
-      //Declaration of WebDriver
-       WebDriver driver = new FirefoxDriver();
+    //Declaration of variables
+    String Username00 = "Username_";
 
-       //Declaration of variables
-       String Username00 = "Username_";
-
-       /*String Date01;
-       Date01 = new Date01(System.currentTimeMillis());
-       DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-       Date Date00;
-       Date00 = new Date00(dateFormat + Date01);
-       // New Username shall be generated*/
-       //Date d = new Date();
-       SimpleDateFormat format1 = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
-       String UsernameTs = Username00 + format1;
-       //Email Address
-       String Email00 = "@test.com.ua";
-       //String EmailTs = "KP" + Date00 + Email00;
-       String EmailTs = "KP" + format1 + Email00;
-       //Other Variables
-       String Us_Password = "12345678";
-       String PL_Firstname = "Alexander";
-       String PL_Lastname = "Nikolayev";
-       String PL_City = "Odessa";
-       //String Country
-       String PL_Address = "187-Avenue";
-       String PL_Phone = "+000-00-00-00";
-       String PL_Gender = "MALE";
-       String PL_Bithday = "12-08-1970";
-       //checkboxes
-       //Selects:
-       //Country
-       //Admin
-       //gender
+    /*String Date01;
+    Date01 = new Date01(System.currentTimeMillis());
+    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+    Date Date00;
+    Date00 = new Date00(dateFormat + Date01);
+    // New Username shall be generated*/
+    //Date d = new Date();
+    SimpleDateFormat format1 = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
+    String UsernameTs = Username00 + format1;
+    //Email Address
+    String Email00 = "@test.com.ua";
+    //String EmailTs = "KP" + Date00 + Email00;
+    String EmailTs = "KP" + format1 + Email00;
+    //Other Variables
+    String Us_Password = "12345678";
+    String PL_Firstname = "Alexander";
+    String PL_Lastname = "Nikolayev";
+    String PL_City = "Odessa";
+    //String Country
+    String PL_Address = "187-Avenue";
+    String PL_Phone = "+000-00-00-00";
+    String PL_Gender = "MALE";
+    String PL_Bithday = "12-08-1970";
+    //checkboxes
+    //Selects:
+    //Country
+    //Admin
+    //gender
 
 
 
@@ -90,11 +90,10 @@ public class Login_Test {
     }*/
 
 
-
     @Test//(enabled = true)
-    public void Test001 (){
+    public void Test001() {
         //Declaration of WebDriver
-       // WebDriver driver = new FirefoxDriver();
+        // WebDriver driver = new FirefoxDriver();
 
         // Opening of Login Page
         driver.get("http://193.138.245.222:81/auth/login");
@@ -112,8 +111,9 @@ public class Login_Test {
         LogIn.submit();
         //Click on Insert link
     }
+
     @Test
-    public void Test002 (){
+    public void Test002() {
 
         //driver.waitForPageToLoad("10000");
         //Click on Insert link
@@ -124,8 +124,9 @@ public class Login_Test {
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 
     }
+
     @Test
-    public  void Test003 (){
+    public void Test003() {
 
         //Enter UserName
         WebElement UserName = driver.findElement(By.xpath("//input[contains(@id, 'us_login')]"));
@@ -156,8 +157,9 @@ public class Login_Test {
         //waiting for page load
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
     }
+
     @Test
-    public void Test004(){
+    public void Test004() {
         //looking for a field  and enter data
         WebElement FNfield = driver.findElement(By.xpath("//input[contains(@id, '__login')]"));
         FNfield.sendKeys(UsernameTs);
@@ -167,14 +169,16 @@ public class Login_Test {
         //waiting for page load
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
     }
+
     @Test
-    public void Test005(){
+    public void Test005() {
         // Opening of first Link
         WebElement FirstRes = driver.findElement(By.xpath("//div[contains(@id , 'datagrid_table')]//tr[2]/td[1]//img"));
         FirstRes.submit();
     }
+
     @Test
-    public void Test006(){
+    public void Test006() {
         //Verifying of Data
         //User Name
         assert (driver.findElement(By.xpath("//input[contains(@id, 'us_login')]")).getText().contains(UsernameTs));
@@ -203,12 +207,14 @@ public class Login_Test {
         assert (driver.findElement(By.xpath("//td[@id='c5618e27f0ab6d90d503b6ef5faca34c']//tr[2]/td/table/tbody/tr[5]/td[2]")).getText().contains(UsernameTs));
 
     }
+
     @Test
-    public void tearDown()throws Exception{
+    public void tearDown() throws Exception {
         //Click Exit on the page
         WebElement Exit;
         Exit = driver.findElement(By.linkText("/ auth/logout"));
         //Exit from the Browser
-        driver.quit();}
+        driver.quit();
+    }
 
 }

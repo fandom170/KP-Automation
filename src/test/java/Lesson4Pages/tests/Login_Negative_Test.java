@@ -1,35 +1,43 @@
 package Lesson4Pages.tests;
 
-import Lesson4Pages.pagesTest.LoginPage;
+import Lesson4Pages.ApplictionEntities.URLLibrary;
+import Lesson4Pages.Logic.GeneralLogic;
+import Lesson4Pages.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Login_Negative_Test extends BaseTest{
+public class Login_Negative_Test extends BaseTest {
 
-    WebDriver driver;
-    LoginPage loginPage;
+    public WebDriver driver;
+    public LoginPage loginPage;
+    public GeneralLogic generalLogic;
 
     @Override
     @BeforeTest
     public void setUp() {
         driver = new FirefoxDriver();
-        driver.get(loginPage.address);
+        driver.get(URLLibrary.baseURL);
         loginPage = new LoginPage(driver);
     }
 
 
     @Test
     public void loginAdminNegative() {
-        //Create Login Page object
-        loginPage = new LoginPage(driver);
+
+        //arrange
+        //act
+        // generalLogic.logInAuto();
+
+
+        //assert
+
         //Login to Admin Area
-        loginPage.logInAuto("admin1", "1234");
-        //assets
+
+        //asserts
 
 
-
-        }
+    }
 }
 

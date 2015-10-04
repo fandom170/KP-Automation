@@ -1,19 +1,10 @@
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import org.openqa.selenium.By;
 
 /**
  * Created by Admin on 13.09.2015.

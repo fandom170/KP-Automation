@@ -6,16 +6,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-//import java.text.DateFormat;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+//import java.text.DateFormat;
+
 /* * Created by Admin on 15.09.2015. */
 public class Logintestv2 {
     @Test
-    public static void LoginTestv2 (){
+    public static void LoginTestv2() {
         final WebDriver driver = new FirefoxDriver();
         //Declaration of variables
         //Main user name
@@ -120,7 +121,7 @@ public class Logintestv2 {
         //Address
         //assert (driver.findElement(By.xpath("//input[contains(@id, 'us_address')]")).getText().contains(PL_Address));
         //Phone
-         assert (driver.findElement(By.xpath("//input[contains(@id, 'us_phone')]")).getText().contains(PL_Phone));
+        assert (driver.findElement(By.xpath("//input[contains(@id, 'us_phone')]")).getText().contains(PL_Phone));
         //Country
         //Gender
         //Birthday
