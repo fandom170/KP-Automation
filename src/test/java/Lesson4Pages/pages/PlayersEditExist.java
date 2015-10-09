@@ -39,6 +39,17 @@ public class PlayersEditExist {
     @FindBy(xpath = ".//*[@id='c5618e27f0ab6d90d503b6ef5faca34c']/table/tbody/tr[2]/td/table/tbody/tr[4]/td[4]/a/img")
     WebElement addBonusDollarsButton;
 
+    //Balances - displayed Amount
+    @FindBy (xpath = ".//*[@id='c5618e27f0ab6d90d503b6ef5faca34c']/table/tbody/tr[2]/td/table/tbody/tr[2]/td[2]")
+    WebElement existRealMoneyAmount;
+
+    @FindBy (xpath = ".//*[@id='c5618e27f0ab6d90d503b6ef5faca34c']/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]")
+    WebElement existFunMoneyAmount;
+
+    @FindBy (xpath = ".//*[@id='c5618e27f0ab6d90d503b6ef5faca34c']/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]")
+    WebElement existBonusMoneyAmount;
+
+
     public PlayersEditExist (WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -70,18 +81,31 @@ public class PlayersEditExist {
         return userPhoneExistInput.getAttribute("value");
     }
 
+    public void clickAddRealAmountButton() {
+        addRealMoneyBalanceButton.click();
+    }
+
+    public void clickAddFunAmountButton() {
+        addFunMoneyBalanceButton.click();
+    }
+
+    public void clickAddBonusAmountButton() {
+        addBonusDollarsButton.click();
+    }
+
+
+    public String getRealAmount () {
+      return existRealMoneyAmount.getAttribute("value");
+    }
+
+    public String getFunAmount () {
+       return existFunMoneyAmount.getAttribute("value");
+    }
+
+    public String getBonusAmount () {
+        return existBonusMoneyAmount.getAttribute("value");
+    }
 
 
 
-
-
-    //
-
-
-
-
-
-
-
-    //Value of Balance
 }

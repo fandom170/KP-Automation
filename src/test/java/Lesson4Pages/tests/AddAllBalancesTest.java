@@ -1,23 +1,83 @@
 package Lesson4Pages.tests;
 
 
+import Lesson4Pages.ApplictionEntities.PlayerBuilder;
+import Lesson4Pages.Logic.Player;
 import org.testng.annotations.Test;
+
+import java.util.Set;
 
 public class AddAllBalancesTest extends BaseTest {
 
+    String amountReal = "10";
+    String amountFun = "22";
+    String amountBonus = "33";
+
+    String notesReal = "TestRealBalance";
+    String notesFun = "TestFunBalance";
+    String notesBonus = "TestBonusBalance";
 
    @Test
    public void enterAndVerifyBalance (){
+
+       //SwitchWindow switchWindow = new SwitchWindow();
        //open player
+       generalLogic.enterUserForBalance();
+       //Arrange data
 
-       //Arrange
-       //read balances values
+       Player playerInitial = new PlayerBuilder()
+               .withRealAmount(playersEditExist.getRealAmount())
+               .withFunAmount(playersEditExist.getFunAmount())
+               .withBonusAmount(playersEditExist.getBonusAmount())
+               .build();
 
-       //open window with balances
+
+       //open window with balances and adding amount
+       Set<String> oldWindowsSet = driver.getWindowHandles();
+
+
+       //switchWindow.oldWindows (driver);
+       generalLogic.openBalancePage();
+       Set<String> newWindowsSet = driver.getWindowHandles();
+       newWindowsSet.removeAll(oldWindowsSet);
+       String newWindowHandle = newWindowsSet.iterator().next();
+       driver.switchTo().window(newWindowHandle);
+       //switchWindow.newWindows (driver);
+       generalLogic.balanceEnter(amountReal, notesReal);
+
+       //switchWindow.oldWindows(driver);
+       generalLogic.openFunPage();
+       Set<String> newWindowsSetFun = driver.getWindowHandles();
+       newWindowsSet.removeAll(oldWindowsSet);
+       String newWindowHandleFun = newWindowsSetFun.iterator().next();
+       driver.switchTo().window(newWindowHandleFun);
+       //switchWindow.newWindows (driver);
+       generalLogic.balanceEnter(amountFun, notesFun);
+
+       //switchWindow.oldWindows(driver);
+       generalLogic.openBonusPage();
+       Set<String> newWindowsSetBonus = driver.getWindowHandles();
+       newWindowsSet.removeAll(oldWindowsSet);
+       String newWindowHandleBonus = newWindowsSetBonus.iterator().next();
+       driver.switchTo().window(newWindowHandleBonus);
+       //switchWindow.newWindows (driver);
+       generalLogic.balanceEnter(amountBonus, notesBonus);
+
 
        //Assert
-       //verify new added balances
+       Player playerChanged = new PlayerBuilder()
+               .withRealAmount(playersEditExist.getRealAmount())
+               .withFunAmount(playersEditExist.getFunAmount())
+               .withBonusAmount(playersEditExist.getBonusAmount())
+               .build();
 
+       //verify new added balances
+       assertsInternal.assertCheckEqual(playerChanged.realBalancePlayer, playerInitial.realBalancePlayer);
+       assertsInternal.assertCheckEqual(playerChanged.funBalancePlayer,  playerInitial.funBalancePlayer);
+       assertsInternal.assertCheckEqual(playerChanged.bonusBalancePlayer,  playerInitial.bonusBalancePlayer);
+
+       //print errors
+       assertsInternal.printErrors();
 
    }
    /*

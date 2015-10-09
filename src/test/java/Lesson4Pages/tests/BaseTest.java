@@ -4,10 +4,7 @@ import Lesson4Pages.ApplictionEntities.AdminCredentials;
 import Lesson4Pages.ApplictionEntities.URLLibrary;
 import Lesson4Pages.Logic.GeneralLogic;
 import Lesson4Pages.Utils.AssertsInternal;
-import Lesson4Pages.pages.LoginPage;
-import Lesson4Pages.pages.PlayersEditExist;
-import Lesson4Pages.pages.PlayersEditNew;
-import Lesson4Pages.pages.UsersPage;
+import Lesson4Pages.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
@@ -21,7 +18,8 @@ public abstract class BaseTest {
     public PlayersEditExist playersEditExist;
     public PlayersEditNew playersEditNew;
     public AssertsInternal assertsInternal;
-    GeneralLogic generalLogic;
+    public BalancePage balancePage;
+    public GeneralLogic generalLogic;
 
 
     @BeforeTest

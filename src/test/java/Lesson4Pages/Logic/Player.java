@@ -10,9 +10,14 @@ public class Player {
     public String lastNamePlayer;
     public String cityPlayer;
     public String phonePlayer;
+    public String realBalancePlayer;
+    public String funBalancePlayer;
+    public String bonusBalancePlayer;
+    public String loyaltyBalancePlayer;
 
     public Player(String nameOfPlayer, String passwordOfPlayer, String emailOfPlayer, String firstNamePlayer,
-                  String lastNamePlayer, String cityPlayer, String phonePlayer) {
+                  String lastNamePlayer, String cityPlayer, String phonePlayer, String realBalancePlayer,
+                  String funBalancePlayer, String bonusBalancePlayer, String loyaltyBalancePlayer) {
 
         this.nameOfPlayer = nameOfPlayer;
         this.passwordOfPlayer = passwordOfPlayer;
@@ -21,5 +26,9 @@ public class Player {
         this.lastNamePlayer = lastNamePlayer;
         this.cityPlayer = cityPlayer;
         this.phonePlayer = phonePlayer;
+        this.realBalancePlayer = realBalancePlayer;
+        this.funBalancePlayer = funBalancePlayer;
+        this.bonusBalancePlayer = bonusBalancePlayer;
+        this.loyaltyBalancePlayer = loyaltyBalancePlayer;
     }
 }

@@ -1,13 +1,16 @@
 package Lesson4Pages.Logic;
 
 
+import Lesson4Pages.pages.BalancePage;
 import Lesson4Pages.pages.LoginPage;
+import Lesson4Pages.pages.PlayersEditExist;
 import Lesson4Pages.pages.UsersPage;
 
 public class GeneralLogic {
 
-    //PlayersEditNew playersEditNew;
     UsersPage usersPage;
+    PlayersEditExist playersEditExist;
+    BalancePage balancePage;
 
     public void logInAuto(LoginPage loginPage, String adminLogin, String adminPassword) {
         //User name
@@ -45,6 +48,38 @@ public class GeneralLogic {
         usersPage.clickSearchButton();
         //Click First Link
         usersPage.clickFirstLinkEdit();
+
+    }
+
+    public void enterUserForBalance() {
+
+        //Click First Link
+        usersPage.clickFirstLinkEdit();
+
+    }
+
+    public void openBalancePage () {
+        playersEditExist.clickAddRealAmountButton();
+
+    }
+
+    public void openFunPage () {
+        playersEditExist.clickAddFunAmountButton();
+
+    }
+
+    public void openBonusPage () {
+        playersEditExist.clickAddBonusAmountButton();
+
+    }
+    public void balanceEnter(String usBal, String usNotes) {
+
+        //User balance
+        balancePage.setUserBalanceAmount(usBal);
+        //Notes
+        balancePage.setUserBalanceNotes(usNotes);
+        //Click save
+        balancePage.clickSaveBalance();
 
     }
 

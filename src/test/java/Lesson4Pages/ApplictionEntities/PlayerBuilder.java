@@ -12,14 +12,14 @@ public class PlayerBuilder {
     private String lastNamePlayer;
     private String cityPlayer;
     private String phonePlayer;
+    private String realBalancePlayer;
+    private String funBalancePlayer;
+    private String bonusBalancePlayer;
+    private String loyaltyBalancePlayer;
 
 
-    //public PlayerBuilder() {
-    //}
-
-    //public static PlayerBuilder aUser() {
-    //    return new PlayerBuilder();
-    //}
+    public PlayerBuilder() {
+    }
 
     public PlayerBuilder withNameOfPlayer(String nameOfPlayer) {
         this.nameOfPlayer = nameOfPlayer;
@@ -56,9 +56,32 @@ public class PlayerBuilder {
         return this;
     }
 
+    public PlayerBuilder withRealAmount(String realBalancePlayer) {
+        this.nameOfPlayer = nameOfPlayer;
+        return this;
+    }
+
+    public PlayerBuilder withFunAmount(String funBalancePlayer) {
+        this.nameOfPlayer = nameOfPlayer;
+        return this;
+    }
+
+    public PlayerBuilder withBonusAmount(String bonusBalancePlayer) {
+        this.nameOfPlayer = nameOfPlayer;
+        return this;
+    }
+
+    public PlayerBuilder withLoyaltyAmount(String loyaltyBalancePlayer) {
+        this.nameOfPlayer = nameOfPlayer;
+        return this;
+    }
+
+
+
     public Player build() {
         return new Player(nameOfPlayer, passwordOfPlayer, emailOfPlayer, firstNamePlayer, lastNamePlayer,
-                cityPlayer, phonePlayer);
+                cityPlayer, phonePlayer, realBalancePlayer, funBalancePlayer, bonusBalancePlayer,
+                loyaltyBalancePlayer);
     }
 }
 

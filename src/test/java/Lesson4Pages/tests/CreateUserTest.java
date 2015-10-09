@@ -41,7 +41,8 @@ public class CreateUserTest extends BaseTest {
                 .withFirstNamePlayer(pLFirstnameExpected)
                 .withLastNamePlayer(pLLastnameExpected)
                 .withCityPlayer(pLCityExpected)
-                .withPhonePlayer(pLPhoneExpected).build();
+                .withPhonePlayer(pLPhoneExpected)
+                .build();
 
 
         //Actions
@@ -63,7 +64,8 @@ public class CreateUserTest extends BaseTest {
                 .withFirstNamePlayer(playersEditExist.getUserFirstNameActual())
                 .withLastNamePlayer(playersEditExist.getUserLastNameActual())
                 .withCityPlayer(playersEditExist.getUserCityActual())
-                .withPhonePlayer(playersEditExist.getUserPhoneActual()).build();
+                .withPhonePlayer(playersEditExist.getUserPhoneActual())
+                .build();
 
 
         //Asserts
