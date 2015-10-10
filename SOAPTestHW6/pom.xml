@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <version>1.0-SNAPSHOT</version>
+
+    <name>JAXB2 - Namespace Prefix Plugin</name>
+    <url>http://java.net/projects/jaxb2-commons/pages/namespace-prefix</url>
+
+    <groupId>NonGUITests</groupId>
+    <artifactId>SOAPTest</artifactId>
+
+
+    <description>
+        015:        This plugin adds 'javax.xml.bind.annotation.XmlNs' annotations to 'package-info.java' file according to
+        016:        specific definitions in bindings.xml file. Those annotations associate namespace prefixes with XML namespace URIs.
+        017:    </description>
+
+    0:       <properties>
+    11:            <axis2.version>1.6.2</axis2.version>
+    12:            <log4j.version>1.2.16</log4j.version>
+    13:       </properties>
+    14:       <build>
+    15:            <resources>
+    16:                 <resource>
+    17:                      <directory>src/main/resources</directory>
+    18:                      <filtering>true</filtering>
+    19:                 </resource>
+    20:            </resources>
+    21:            <plugins>
+    22:                 <plugin>
+    23:                      <groupId>org.apache.axis2</groupId>
+    24:                      <artifactId>axis2-wsdl2code-maven-plugin</artifactId>
+    25:                      <version>1.6.2</version>
+    26:                      <executions>
+    27:                           <execution>
+    28:                                <goals>
+    29:                                     <goal>wsdl2code</goal>
+    30:                                </goals>
+    31:                                <configuration>
+    32:                                     <wsdlFile> http://speller.yandex.net/services/spellservice?WSDL </wsdlFile>
+    33:                                     <databindingName>adb</databindingName>
+    34:                                     <packageName>com.blog.webservices.client</packageName>
+    35:                                     <outputDirectory>src/test/java</outputDirectory>
+    36:                                     <flattenFiles>true</flattenFiles>
+    37:                                </configuration>
+    38:                           </execution>
+    39:                      </executions>
+    40:                 </plugin>
+    41:                 <plugin>
+    42:                      <groupId>org.apache.maven.plugins</groupId>
+    43:                      <artifactId>maven-compiler-plugin</artifactId>
+    44:                 </plugin>
+    45:            </plugins>
+    46:       </build>
+
+    47:       <dependencies>
+    48:            <dependency>
+    49:                 <groupId>org.apache.axis2</groupId>
+    50:                 <artifactId>axis2-kernel</artifactId>
+    51:                 <version>${axis2.version}</version>
+    52:            </dependency>
+    53:            <dependency>
+    54:                 <groupId>org.apache.axis2</groupId>
+    55:                 <artifactId>axis2-adb</artifactId>
+    56:                 <version>${axis2.version}</version>
+    57:            </dependency>
+    58:            <dependency>
+    59:                 <groupId>org.apache.axis2</groupId>
+    60:                 <artifactId>axis2-transport-http</artifactId>
+    61:                 <version>${axis2.version}</version>
+    62:            </dependency>
+    63:            <dependency>
+    64:                 <groupId>org.apache.axis2</groupId>
+    65:                 <artifactId>axis2-transport-local</artifactId>
+    66:                 <version>${axis2.version}</version>
+    67:            </dependency>
+    68:            <dependency>
+    69:                 <groupId>org.apache.axis2</groupId>
+    70:                 <artifactId>axis2-xmlbeans</artifactId>
+    71:                 <version>${axis2.version}</version>
+    72:            </dependency>
+    73:            <dependency>
+    74:                 <groupId>log4j</groupId>
+    75:                 <artifactId>log4j</artifactId>
+    76:                 <version>${log4j.version}</version>
+    77:            </dependency>
+    78:       </dependencies>
+
+
+</project>
